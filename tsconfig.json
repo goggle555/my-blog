@@ -1,27 +1,34 @@
 {
-  "include": [
+  "include": [ // TypeScriptとして認識させるファイル名またはパターンのリスト
     "**/*",
     "**/.server/**/*",
     "**/.client/**/*",
     ".react-router/types/**/*"
   ],
-  "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["node", "vite/client"],
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
+  "compilerOptions": { // TypeScriptの動作ルール
+    "lib": [ // 型定義の追加
+      "DOM", // DOM操作APIの型定義
+      "DOM.Iterable", // ES2016で追加されたDOM操作APIの型定義
+      "ES2022" // ES2022までに追加されたJavaScript APIの型定義
+    ],
+    "types": [ // 指定した型定義のみをグローバルスコープに追加
+      "node", // Node.js APIの型定義
+      "vite/client" // https://vite.dev/guide/features#client-types
+    ],
+    "target": "ES2022", // 出力するJavaScriptのバージョン
+    "module": "ES2022", // モジュールシステムの指定
+    "moduleResolution": "bundler", // モジュールの名前解決方法の指定
+    "jsx": "react-jsx", // JSXを_jsxに変換する(Reactのimportが不要になる)
     "rootDirs": [".", "./.react-router/types"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["./app/*"]
     },
-    "esModuleInterop": true,
+    "esModuleInterop": true, // CommonJS/AMD/UMDモジュールをES6モジュールと同様に扱わない
     "verbatimModuleSyntax": true,
-    "noEmit": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true
+    "noEmit": true, // JavaScriptソースコード、ソースマップ、宣言などのファイルを出力しない
+    "resolveJsonModule": true, // json拡張子のモジュールをインポートできる
+    "skipLibCheck": true, // 宣言ファイルの型チェックをスキップする
+    "strict": true // 型チェックを厳密におこなう
   }
 }
