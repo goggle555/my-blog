@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "./build/client",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,9 +8,18 @@
     ],
     "rewrites": [
       {
-        "source": "./build/client",
+        "source": "**",
         "destination": "/index.html"
       }
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
   }
 }
