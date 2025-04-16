@@ -9,6 +9,9 @@
     "typecheck": "react-router typegen && tsc",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*": "biome check . --write --staged --no-errors-on-unmatched"
+  },
   "dependencies": {
     "@mdx-js/rollup": "3.1.0",
     "@react-router/node": "7.5.0",
