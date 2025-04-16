@@ -1,17 +1,21 @@
 {
-  "include": [ // TypeScriptとして認識させるファイル名またはパターンのリスト
+  "include": [
+    // TypeScriptとして認識させるファイル名またはパターンのリスト
     "**/*",
     "**/.server/**/*",
     "**/.client/**/*",
     ".react-router/types/**/*"
   ],
-  "compilerOptions": { // TypeScriptの動作ルール
-    "lib": [ // 型定義の追加
+  "compilerOptions": {
+    // TypeScriptの動作ルール
+    "lib": [
+      // 型定義の追加
       "DOM", // DOM操作APIの型定義
       "DOM.Iterable", // ES2016で追加されたDOM操作APIの型定義
       "ES2022" // ES2022までに追加されたJavaScript APIの型定義
     ],
-    "types": [ // 指定した型定義のみをグローバルスコープに追加
+    "types": [
+      // 指定した型定義のみをグローバルスコープに追加
       "node", // Node.js APIの型定義
       "vite/client" // https://vite.dev/guide/features#client-types
     ],
