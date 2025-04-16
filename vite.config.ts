@@ -5,5 +5,5 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import mdx from "@mdx-js/rollup"
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), mdx()],
+  plugins: [tailwindcss(), mdx(), reactRouter(), tsconfigPaths()],
 });
